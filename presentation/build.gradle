@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+    }
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "edu.victoralbertos.restapiparseauthcleanandroid"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled = true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0].processResources.manifestFile
+        resourcePackageName "edu.victoralbertos.restapiparseauthcleanandroid"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':data')
+    compile project(':domain')
+
+    def presentationDependencies = rootProject.ext.presentationDependencies
+
+    apt presentationDependencies.daggerCompiler
+    compile presentationDependencies.dagger
+    provided presentationDependencies.javaxAnnotation
+
+    compile presentationDependencies.rxJava
+    compile presentationDependencies.rxAndroid
+
+    compile presentationDependencies.androidannotations
+    apt presentationDependencies.androidannotationsCompiler
+
+    compile presentationDependencies.supportAppCompat
+
+
+    def presentationTestDependencies = rootProject.ext.presentationTestDependencies
+
+    androidTestCompile (presentationTestDependencies.supportTestRunner) {
+        exclude module: 'support-annotations'
+    }
+
+    androidTestCompile (presentationTestDependencies.supportTestRules) {
+        exclude module: 'support-annotations'
+    }
+
+    androidTestCompile presentationTestDependencies.robotiumVersion
+}

@@ -1,0 +1,92 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.3.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    compileSdkVersion = 22
+    buildToolsVersion = "22.0.1"
+
+    //Libraries
+    daggerVersion = '2.0.1'
+    rxJavaVersion = '1.0.14'
+    rxAndroidVersion = '1.0.1'
+    javaxAnnotationVersion = "10.0-b28"
+    androidannotationsVersion = '3.3.2'
+    supportAppCompatVersion = '22.2.1'
+    gsonVersion = "1.7.2"
+    retrofitVersion = "1.9.0"
+
+    //Unit testing
+    jUnitVersion = "4.12"
+    mockitoVersion = "1.10.19"
+    hamcrestVersion = "1.1"
+    robolectricVersion = "3.0"
+
+    //Integration testing
+    supportTestRunnerVersion = "0.3"
+    supportTestRulesVersion = "0.3"
+    robotiumVersion = "5.3.1"
+
+    domainDependencies = [
+            daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger:             "com.google.dagger:dagger:${daggerVersion}",
+            rxJava:             "io.reactivex:rxjava:${rxJavaVersion}",
+            javaxAnnotation:    "org.glassfish:javax.annotation:${javaxAnnotationVersion}",
+            gson:               "com.google.code.gson:gson:${gsonVersion}"
+    ]
+
+    domainTestDependencies = [
+            junit:              "junit:junit:${jUnitVersion}",
+            mockito:            "org.mockito:mockito-core:${mockitoVersion}",
+            hamcrest:           "org.hamcrest:hamcrest-library:${hamcrestVersion}"
+    ]
+
+    dataDependencies = [
+            retrofit:           "com.squareup.retrofit:retrofit:${retrofitVersion}",
+            daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger:             "com.google.dagger:dagger:${daggerVersion}",
+            rxJava:             "io.reactivex:rxjava:${rxJavaVersion}",
+            javaxAnnotation:    "org.glassfish:javax.annotation:${javaxAnnotationVersion}",
+            supportAppCompat: "com.android.support:appcompat-v7:${supportAppCompatVersion}"
+    ]
+
+    dataTestDependencies = [
+            junit:              "junit:junit:${jUnitVersion}",
+            mockito:            "org.mockito:mockito-core:${mockitoVersion}",
+            hamcrest:           "org.hamcrest:hamcrest-library:${hamcrestVersion}",
+            robolectric:        "org.robolectric:robolectric:${robolectricVersion}"
+    ]
+
+    presentationDependencies = [
+            daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger:             "com.google.dagger:dagger:${daggerVersion}",
+            rxJava:             "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid:          "io.reactivex:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation:    "org.glassfish:javax.annotation:${javaxAnnotationVersion}",
+            androidannotations: "org.androidannotations:androidannotations-api:${androidannotationsVersion}",
+            androidannotationsCompiler: "org.androidannotations:androidannotations:${androidannotationsVersion}",
+            supportAppCompat: "com.android.support:appcompat-v7:${supportAppCompatVersion}"
+    ]
+
+    presentationTestDependencies = [
+            supportTestRunner:  "com.android.support.test:runner:${supportTestRunnerVersion}",
+            supportTestRules:   "com.android.support.test:rules:${supportTestRulesVersion}",
+            robotiumVersion:    "com.jayway.android.robotium:robotium-solo:${robotiumVersion}"
+    ]
+}

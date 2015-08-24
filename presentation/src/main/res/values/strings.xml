@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Rest API Parse Auth Android</string>
+    <string name="connect">Connect</string>
+    <string name="success">Great!</string>
+    <string name="failure">Error!</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="phone">Phone</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="update">Update</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="10dp">
+
+<Button
+    android:id="@+id/bt_logout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/logout" />
+
+<ProgressBar
+    android:id="@+id/pb_logout_loading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:indeterminate="true"
+    android:visibility="invisible" />
+
+</RelativeLayout>
