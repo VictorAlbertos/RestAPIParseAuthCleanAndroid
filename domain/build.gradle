@@ -24,9 +24,6 @@ dependencies {
 
     compile domainDependencies.rxJava
 
-    compile domainDependencies.gson
-
-
     def domainTestDependencies = rootProject.ext.domainTestDependencies
 
     testCompile domainTestDependencies.junit

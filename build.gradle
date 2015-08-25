@@ -47,8 +47,7 @@ ext {
             daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
             dagger:             "com.google.dagger:dagger:${daggerVersion}",
             rxJava:             "io.reactivex:rxjava:${rxJavaVersion}",
-            javaxAnnotation:    "org.glassfish:javax.annotation:${javaxAnnotationVersion}",
-            gson:               "com.google.code.gson:gson:${gsonVersion}"
+            javaxAnnotation:    "org.glassfish:javax.annotation:${javaxAnnotationVersion}"
     ]
 
     domainTestDependencies = [
