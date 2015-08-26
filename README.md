@@ -4,4 +4,4 @@ An android implementation of an authentication system based on the Parse Api usi
 # Technologies: 
 Dagger 2, AndroidAnnotations, Retrofit, Mockito, Roboelectric, Robotium, RXJava, MVP, Dependency inversion, Dependency Injection
 
-More info about this project in this [tutorial](http://victoralbertos.com/authentication-for-android-and-ios-tutorial-3-creating-android-project-using-the-clean-architecture-suggested-by-robert-c-martin/).
+More info about this project in this [tutorial](http://victoralbertos.com/authentication-system-for-android-using-the-clean-architecture-suggested-by-robert-c-martin/).
